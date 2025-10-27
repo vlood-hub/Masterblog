@@ -13,8 +13,10 @@
         <div class="post-header">
             <h2>{{ post.title }}</h2>
             <div class="action-buttons">
-                <a href="{{ url_for('delete', post_id=post.id) }}" class="btn emoji">🗑️</a>
+                <p>{{ post.likes }}</p>
+                <a href="{{ url_for('likes', post_id=post.id) }}" class="btn emoji">❤️</a>
                 <a href="{{ url_for('update', post_id=post.id) }}" class="btn emoji">✏️</a>
+                <a href="{{ url_for('delete', post_id=post.id) }}" class="btn emoji">🗑️</a>
             </div>
         </div>
         <p><em>written by {{ post.author }}</em></p>
