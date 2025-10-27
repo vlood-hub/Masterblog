@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Post</h2>
+        <form method="POST" action="{{ url_for('add') }}">
+            <label>Author:</label>
+            <input type="text" name="author" value="{{ request.form.author }}" required>
+
+            <label>Title:</label>
+            <input type="text" name="title" value="{{ request.form.title }}" required>
+
+            <label>Content:</label>
+            <textarea name="content" rows="5" required>{{ request.form.content }}</textarea>
+
+            <button type="submit" class="submit-button">Submit</button>
+            <a href="{{ url_for('index') }}">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
